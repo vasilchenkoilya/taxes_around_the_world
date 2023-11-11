@@ -11,32 +11,64 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>country 1</h2>
+      <h2>{{ country1.name }}</h2>
       <table class="table">
-        {% for item in country1 %}
         <tr>
-          <td>{{ item.name }}</td>
-          <td>{{ item.rate_percentage }}</td>
-          <td>{{ item.rate_fixed }}</td>
-          <td>{{ item.rate_formula }}</td>
+          <th>Name</th>
+          {% for item in country1 %}
+            <td>{{ item.name }}</td>
+          {% endfor %}
         </tr>
-        {% endfor %}
+        <tr>
+          <th>Rate Percentage</th>
+          {% for item in country1 %}
+            <td>{{ item.rate_percentage }}</td>
+          {% endfor %}
+        </tr>
+        <tr>
+          <th>Rate Fixed</th>
+          {% for item in country1 %}
+            <td>{{ item.rate_fixed }}</td>
+          {% endfor %}
+        </tr>
+        <tr>
+          <th>Rate Formula</th>
+          {% for item in country1 %}
+            <td>{{ item.rate_formula }}</td>
+          {% endfor %}
+        </tr>
       </table>
     </div>
     <div class="col">
-      <h2>country 2</h2>
+      <h2>{{ country2.name }}</h2>
       <table class="table">
-        {% for item in country2 %}
         <tr>
-          <td>{{ item.name }}</td>
-          <td>{{ item.rate_percentage }}</td>
-          <td>{{ item.rate_fixed }}</td>
-          <td>{{ item.rate_formula }}</td>
+          <th>Name</th>
+          {% for item in country2 %}
+            <td>{{ item.name }}</td>
+          {% endfor %}
         </tr>
-        {% endfor %}
+        <tr>
+          <th>Rate Percentage</th>
+          {% for item in country2 %}
+            <td>{{ item.rate_percentage }}</td>
+          {% endfor %}
+        </tr>
+        <tr>
+          <th>Rate Fixed</th>
+          {% for item in country2 %}
+            <td>{{ item.rate_fixed }}</td>
+          {% endfor %}
+        </tr>
+        <tr>
+          <th>Rate Formula</th>
+          {% for item in country2 %}
+            <td>{{ item.rate_formula }}</td>
+          {% endfor %}
+        </tr>
       </table>
     </div>
   </div>
 </div>
 {% endif %}
-{% endblock content %}
+{% endblock %}
