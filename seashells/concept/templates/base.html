@@ -10,10 +10,10 @@
 </head>
 <body>
     <header class="bg-dark text-white p-3">
-        <h1>two countries taxes comparing</h1>
+        <a class="navbar-brand" href="{% url 'index' %}">Countries Taxes Comparing</a>
     </header>
 
-    <main class="container my-5">
+    <main class="container-fluid my-5">
         {% block content %}
         {% endblock %}
     </main>

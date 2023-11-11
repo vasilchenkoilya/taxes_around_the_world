@@ -1,16 +1,22 @@
-{ {% extends "base.html" %}}
+{% extends "base.html" %}
 {% block content %}
-<form action="{% url 'compare' %}" method="get">
-    <select name="country1">
+<div class="container">
+  <form action="{% url 'compare' %}" method="get" class="text-center">
+    <div class="form-group">
+      <select name="country1" class="form-control">
         {% for country in countries %}
-            <option value="{{ country }}">{{ country }}</option>
+          <option value="{{ country }}">{{ country }}</option>
         {% endfor %}
-    </select>
-    <select name="country2">
+      </select>
+    </div>
+    <div class="form-group">
+      <select name="country2" class="form-control">
         {% for country in countries %}
-            <option value="{{ country }}">{{ country }}</option>
+          <option value="{{ country }}">{{ country }}</option>
         {% endfor %}
-    </select>
-    <input type="submit" value="Compare">
-</form>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-secondary btn-lg">Compare</button>
+  </form>
+</div>
 {% endblock content %}

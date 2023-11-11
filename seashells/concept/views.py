@@ -13,9 +13,10 @@ def compare_view(request):
 
     taxes1 = CountryTaxesConcept.objects.filter(country__name=country1)
     taxes2 = CountryTaxesConcept.objects.filter(country__name=country2)
+    taxes = zip(taxes1, taxes2)
+
     context = {
-        'taxes1': taxes1,
-        'taxes2': taxes2,
+        'taxes': taxes,
         'country1': country1,
         'country2': country2
     }

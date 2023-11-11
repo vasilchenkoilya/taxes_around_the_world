@@ -1,33 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <div class="row">
-      <div class="col">
-        <h2>{{ country1 }}</h2>
-        <table class="table table-dark">
-          {% for tax in taxes1 %}
-            <tr>
-              <td>{{ tax.tax.name }}</td>
-              <td>Rate Percentage: {{ tax.rate_percentage }}</td>
-              <td>Rate Fixed: {{ tax.rate_fixed }}</td>
-              <td>Rate Formula: {{ tax.rate_formula }}</td>
-            </tr>
-          {% endfor %}
-        </table>
-      </div>
-      <div class="col">
-        <h2>{{ country2 }}</h2>
-        <table class="table table-dark">
-          {% for tax in taxes2 %}
-            <tr>
-              <td>{{ tax.tax.name }}</td>
-              <td>Rate Percentage: {{ tax.rate_percentage }}</td>
-              <td>Rate Fixed: {{ tax.rate_fixed }}</td>
-              <td>Rate Formula: {{ tax.rate_formula }}</td>
-            </tr>
-          {% endfor %}
-        </table>
-      </div>
-    </div>
-  </div>
+  <table class="table table-dark" style="width: 100%; table-layout: fixed;">
+    <thead>
+      <tr>
+        <th style="white-space: nowrap;">Kind of tax</th>
+        <th>{{ country1 }}</th>
+        <th>{{ country2 }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tax1, tax2 in taxes %}
+        <tr>
+          <td><span class="name-text">{{ tax1.tax.name }} </span></td>
+          <td>
+            <span class="gold-text">Rate Percentage: </span> {{ tax1.rate_percentage }}<br>
+            <span class="gold-text">Rate Fixed: </span> {{ tax1.rate_fixed }}<br>
+            <span class="gold-text">Rate Formula: </span> {{ tax1.rate_formula }}<br>
+          </td>
+          <td>
+            <span class="gold-text">Rate Percentage: </span> {{ tax2.rate_percentage }}<br>
+            <span class="gold-text">Rate Fixed: </span> {{ tax2.rate_fixed }}<br>
+            <span class="gold-text">Rate Formula: </span> {{ tax2.rate_formula }}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock content %}

@@ -1,0 +1,14 @@
+.gold-text {
+    color: rgb(165, 157, 111);
+    font-weight: bold;
+}
+.name-text {
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(190, 190, 187);
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+}
