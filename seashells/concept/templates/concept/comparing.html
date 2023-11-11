@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form1 }}
+    {{ form2 }}
+    <input type="submit" value="compare">
+</form>
+
+{% if country1 and country2 %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>country 1</h2>
+      <table class="table">
+        {% for item in country1 %}
+        <tr>
+          <td>{{ item.name }}</td>
+          <td>{{ item.rate_percentage }}</td>
+          <td>{{ item.rate_fixed }}</td>
+          <td>{{ item.rate_formula }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div class="col">
+      <h2>country 2</h2>
+      <table class="table">
+        {% for item in country2 %}
+        <tr>
+          <td>{{ item.name }}</td>
+          <td>{{ item.rate_percentage }}</td>
+          <td>{{ item.rate_fixed }}</td>
+          <td>{{ item.rate_formula }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock content %}
