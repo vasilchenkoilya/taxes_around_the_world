@@ -1,8 +1,13 @@
 from django.contrib import admin
-from .models import CountryTaxesConcept
+from .models import CountryTaxesConcept, Tax
 
 @admin.register(CountryTaxesConcept)
 class CountryTaxesConceptAdmin(admin.ModelAdmin):
-    list_display = ('name', 'rate_percentage', 'rate_fixed', 'rate_formula', 'country')
-    list_filter = ('rate_percentage',)
-    search_fields = ('name', 'country__name')
+    list_display = ('rate_percentage', 'rate_fixed', 'rate_formula', 'country', 'tax')
+    list_filter = ('country',)
+    search_fields = ('tax', 'country__name')
+
+@admin.register(Tax)
+class TaxAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description')
+    search_fields = ('name', 'description')

@@ -1,4 +1,16 @@
 { {% extends "base.html" %}}
 {% block content %}
-<button type="button" class="btn btn-secondary btn-lg btn-block" onclick="window.location.href='{% url 'comparing' %}'" >Compare</button>
+<form action="{% url 'compare' %}" method="get">
+    <select name="country1">
+        {% for country in countries %}
+            <option value="{{ country }}">{{ country }}</option>
+        {% endfor %}
+    </select>
+    <select name="country2">
+        {% for country in countries %}
+            <option value="{{ country }}">{{ country }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Compare">
+</form>
 {% endblock content %}
