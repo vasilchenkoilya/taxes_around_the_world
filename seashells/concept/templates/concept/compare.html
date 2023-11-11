@@ -11,7 +11,9 @@
     <tbody>
       {% for tax1, tax2 in taxes %}
         <tr>
-          <td><span class="name-text">{{ tax1.tax.name }} </span></td>
+          <td>
+            <a href="{% url 'tax_detail' tax1.tax.pk %}" class="name-text">{{ tax1.tax.name }}</a>
+          </td>
           <td>
             <span class="gold-text">Rate Percentage: </span> {{ tax1.rate_percentage }}<br>
             <span class="gold-text">Rate Fixed: </span> {{ tax1.rate_fixed }}<br>

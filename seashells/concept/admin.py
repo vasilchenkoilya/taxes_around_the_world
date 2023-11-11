@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import CountryTaxesConcept, Tax
+from tinymce.models import HTMLField
 
 @admin.register(CountryTaxesConcept)
 class CountryTaxesConceptAdmin(admin.ModelAdmin):

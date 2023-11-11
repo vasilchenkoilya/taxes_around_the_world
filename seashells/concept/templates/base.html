@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
 </head>
 <body>
-    <header class="bg-dark text-white p-3">
+    <header class="bg-dark text-white p-3 d-flex justify-content-between">
         <a class="navbar-brand" href="{% url 'index' %}">Countries Taxes Comparing</a>
+        <a class="navbar-item" href="{% url 'admin:index' %}">Admin Panel</a>
     </header>
 
     <main class="container-fluid my-5">

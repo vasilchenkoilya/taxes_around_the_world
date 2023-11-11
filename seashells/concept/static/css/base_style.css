@@ -1,3 +1,11 @@
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%; 
+    background: url('/static/images/bg.jpg') no-repeat center center; 
+    background-size: cover;
+    z-index: -1;
+}
 .gold-text {
     color: rgb(165, 157, 111);
     font-weight: bold;
@@ -11,4 +19,15 @@
     font-weight: bold;
     font-size: 40px;
     color: white;
+}
+.navbar-item {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+.form-control {
+    background-color: rgb(213, 235, 235);
+}
+.form-control option {
+    background-color: rgb(193, 226, 226);
 }

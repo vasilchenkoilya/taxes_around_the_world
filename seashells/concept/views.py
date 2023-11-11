@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import CountryTaxesConcept
+from .models import CountryTaxesConcept, Tax
+from django.views.generic import DetailView
 
 
 def index(request):
@@ -22,4 +23,10 @@ def compare_view(request):
     }
 
     return render(request, 'concept/compare.html', context)
+
+class TaxDetailView(DetailView):
+    model = Tax
+    template_name = 'concept/tax_detail.html'
+
+    
 

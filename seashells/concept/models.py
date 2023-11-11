@@ -1,9 +1,10 @@
 from django.db import models
 from cities_light.models import Country
+from tinymce.models import HTMLField
 
 class Tax(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField()
+    description = HTMLField(default='', blank=True, null=True)	
 
     def __str__(self):
         return self.name
